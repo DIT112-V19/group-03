@@ -32,7 +32,8 @@ void setup() {
 void loop() {
   // Maintain the speed and update the heading
   car.update();
-  if (front.getDistance() < 20 && front.getDistance() > 0) {
+  int distance = front.getDistance();
+  if (distance < 20 && distance > 0) {
     car.setSpeed(0);
   }
 }
