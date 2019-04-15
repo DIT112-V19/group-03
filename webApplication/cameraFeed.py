@@ -12,7 +12,6 @@ import socketserver
 from threading import Condition
 from http import server
 
-# html starts here 
 PAGE="""\
 <html>
     <head>
