@@ -1,14 +1,14 @@
 #include <Smartcar.h> 
 const unsigned int MAX_DISTANCE = 50;
-const int MAX_SPEED = 60;
-const int MIN_SPEED = -40;
+const int MAX_SPEED = 60; // Max speed for the car forward
+const int MIN_SPEED = -40; // Max speed for the car going backwards
 
 //Pins
 const int TRIGGER_PIN = 6; //D6
 const int ECHO_PIN = 7; //D7
 
 //Controls
-int currSpeed = 0; 
+int currSpeed = 0;
 int alterSpeed = 20; // Will alter speed backwards/forward
 const int lDegrees = -75; //degrees to turn left
 const int rDegrees = 75; //degrees to turn right
@@ -24,14 +24,11 @@ void setup() {
 }
 
 void loop() {
-  
-// put your main code here, to run repeatedly:
-
   int distance = front.getDistance();
   Serial.print(front.getDistance());
 
-  if(distance < 20 && distance > 0){
-    car.setSpeed(-30);
+  if(distance < 20 && distance > 0){ 
+    car.setSpeed(-30); // Car will move backwards so that the user can start controlling it again
     car.setAngle(0);
   }
   
@@ -43,11 +40,10 @@ if (Serial.available()) {
 
   
     switch (input) {
-     
       case 'w': //go ahead
-      if(currSpeed > MAX_SPEED){
+      if(currSpeed > MAX_SPEED){ // If max_speed has already been achieved, just keep that speed. 
         car.setSpeed(MAX_SPEED);
-        currSpeed = MAX_SPEED;
+        currSpeed = MAX_SPEED; 
       }else{
        car.setSpeed(currSpeed += alterSpeed);
        car.setAngle(0);
@@ -64,12 +60,12 @@ if (Serial.available()) {
         }
         break;
         
-      case 'a': //rotate counter-clockwise going forward
+      case 'a': // Turn left with a 75 degrees angle
         car.setSpeed(currSpeed);
         car.setAngle(lDegrees);
         break;
         
-      case 'd': //turn clock-wise
+      case 'd': //turn right with a 75 degrees angle 
         car.setSpeed(currSpeed);
         car.setAngle(rDegrees);
         break;
