@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Car control</title>
+<style>
+    body {
+        font-family: "courier", courier, sans-serif;
+        background-color: #fffff;
+    }
+    div.container {
+        width: 100%;
+        border: 1px solid black;
+    }
+    div.boxA {
+        box-sizing: border-box;
+        width: 39%;
+        height: 600px;
+        border: 1px solid black;
+        padding: 10px;
+        float: left;
+    }
+    div.boxB {
+        box-sizing: border-box;
+        width: 61%;
+        height: 600px;
+        border: 1px solid black;
+        padding: 10px;
+        float: left;
+    }
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 17px 28px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 1px 1px;
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+/* hoverable button */
+    .button1 {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        position: absolute;
+        left: 200px;
+        top: 150px;
+        border-radius: 8px;
+        width: 130px;
+    }
+    .button1:hover {
+        background-color: #555555;
+        color: white;
+    }
+    .button2 {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        position: absolute;
+        left: 200px;
+        top: 350px;
+        border-radius: 8px;
+        width: 130px;
+    }
+    .button2:hover {
+        background-color: #555555;
+        color: white;
+    }
+    .button3 {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        position: absolute;
+        left: 355px;
+        top: 250px;
+        border-radius: 8px;
+        width: 130px;
+    }
+    .button3:hover {
+        background-color: #555555;
+        color: white;
+    }
+    .button4 {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        position: absolute;
+        left: 45px;
+        top: 250px;
+        border-radius: 8px;
+        width: 130px;
+    }
+    .button4:hover {
+        background-color: #555555;
+        color: white;
+    }
+    .button5 {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        position: absolute;
+        left: 220px;
+        top: 234px;
+        border-radius: 50px;
+        width: 90px;
+        height: 90px;
+    }
+    .button5:hover {
+        background-color: #555555;
+        color: white;
+    }
+
+</style>
+</head>
+<body>
+    <h1>Car control</h1>
+    
+    <div class="container">
+        <div class="boxA">left half
+            <button class="button button1">Forward</button>
+            <button class="button button2">Backward</button>
+            <button class="button button3">Right</button>
+            <button class="button button4">Left</button>
+            <button class="button button5">Stop</button>
+        </div>
+        <div class="boxB">right half</div>
+        <div style="clear:both;"></div>
+    </div>
+    
+</body>
+</html>
