@@ -31,6 +31,8 @@
     .button {
         background-color: #4CAF50;
         border: none;
+        border-radius:15px;
+        box-shadow: 0 6px #9899;
         color: white;
         padding: 17px 28px;
         text-align: center;
@@ -39,8 +41,16 @@
         font-size: 16px;
         margin: 1px 1px;
         -webkit-transition-duration: 0.4s;
-        transition-duration: 0.4s;
+        transition-duration: 0.1s;
         cursor: pointer;
+    }
+
+    .button:hover {background-color: yellow}
+    .button:active{
+      background-color: #3e7e41;
+      box-shadow: 0 3px #666;
+      transform: translateY(5px);
+
     }
 /* hoverable button */
     .button1 {
@@ -119,7 +129,7 @@
 </head>
 <body>
     <h1>Car control</h1>
-    
+
     <div class="container">
         <div class="boxA">left half
             <button class="button button1">Forward</button>
@@ -129,8 +139,8 @@
             <button class="button button5">Stop</button>
         </div>
         <div class="boxB">right half</div>
-        <div style="clear:both;"></div>
+
     </div>
-    
+
 </body>
 </html>
