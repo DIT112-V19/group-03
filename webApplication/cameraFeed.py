@@ -1,4 +1,4 @@
-# Web streaming example
+# Web streaming
 # Source code from the official PiCamera package
 # http://picamera.readthedocs.io/en/latest/recipes2.html#web-streaming
 #
@@ -12,144 +12,146 @@ import socketserver
 from threading import Condition
 from http import server
 
+from io import BytesIO
+
 PAGE="""\
-<html>
+    <html>
     <head>
-        <title>Car control</title>
-        <style>
-            body {
-                font-family: "courier", courier, sans-serif;
-                background-color: #fffff;
-            }
-        div.container {
-            width: 100%;
-            border: 1px solid black;
-        }
-        div.boxA {
-            box-sizing: border-box;
-            width: 39%;
-            height: 600px;
-            border: 1px solid black;
-            padding: 10px;
-            float: left;
-        }
-        div.boxB {
-            box-sizing: border-box;
-            width: 61%;
-            height: 600px;
-            border: 1px solid black;
-            padding: 10px;
-            float: left;
-        }
-        .button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 17px 28px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 1px 1px;
-            -webkit-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-            cursor: pointer;
-        }
-        .button1 {
-            background-color: white;
-            color: black;
-            border: 2px solid #555555;
-            position: absolute;
-            left: 200px;
-            top: 150px;
-            border-radius: 8px;
-            width: 130px;
-        }
-        .button1:hover {
-            background-color: #555555;
-            color: white;
-        }
-        .button2 {
-            background-color: white;
-            color: black;
-            border: 2px solid #555555;
-            position: absolute;
-            left: 200px;
-            top: 350px;
-            border-radius: 8px;
-            width: 130px;
-        }
-        .button2:hover {
-            background-color: #555555;
-            color: white;
-        }
-        .button3 {
-            background-color: white;
-            color: black;
-            border: 2px solid #555555;
-            position: absolute;
-            left: 355px;
-            top: 250px;
-            border-radius: 8px;
-            width: 130px;
-        }
-        .button3:hover {
-            background-color: #555555;
-            color: white;
-        }
-        .button4 {
-            background-color: white;
-            color: black;
-            border: 2px solid #555555;
-            position: absolute;
-            left: 45px;
-            top: 250px;
-            border-radius: 8px;
-            width: 130px;
-        }
-        .button4:hover {
-            background-color: #555555;
-            color: white;
-        }
-        .button5 {
-            background-color: white;
-            color: black;
-            border: 2px solid #555555;
-            position: absolute;
-            left: 220px;
-            top: 234px;
-            border-radius: 50px;
-            width: 90px;
-            height: 90px;
-        }
-        .button5:hover {
-            background-color: #555555;
-            color: white;
-        }
-        
-            </style>
+    <meta charset="utf-8"/>
+    <title>Car control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+    body {
+    font-family: "courier", courier, sans-serif;
+    background-color: #fffff;
+    background-image: url("img/background.jpg");
+    }
+    .header {
+    width:90%;
+    padding: 10px;
+    margin: auto;
+    }
+    .videoFeed {
+    width: 90%;
+    border: 2px dotted #6F6F6F;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 10px;
+    }
+    .controlBox {
+    width: 90%;
+    border: 2px solid #6F6F6F;
+    padding: 10px;
+    margin: auto;
+    }
+    .upperBox {
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    }
+    .middleBox {
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    }
+    .lowerBox {
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    }
+    /* button design */
+    .button {
+    background-color: #A4B88D;
+    border-radius:15px;
+    box-shadow: 0 2px #C9C9C9;
+    color: white;
+    padding: 17px 17px;
+    text-align: center;
+    display: inline-block;
+    margin:auto;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.1s;
+    cursor: pointer;
+    border: 2px solid #91AE79;
+    }
+    .button:active{
+    background-color: #618761;
+    box-shadow: 0 1px #666;
+    }
+    .button1 {
+    color: black;
+    border-radius: 8px;
+    width: 130px;
+    }
+    .button2 {
+    color: black;
+    border-radius: 8px;
+    width: 130px;
+    }
+    .button3 {
+    color: black;
+    border-radius: 8px;
+    width: 130px;
+    }
+    .button4 {
+    color: black;
+    border-radius: 8px;
+    width: 130px;
+    }
+    .button:hover {
+    background-color: #7B9565;
+    border: 2px solid #7B9565;
+    color: white;
+    }
+    .button5 {
+    color: black;
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+    }
+    .button5:hover {
+    background-color: #BB3C3C;
+    border: 2px solid #BB3C3C;
+    color: white;
+    }
+    </style>
     </head>
     <body>
-        
-        <h1>Car control</h1>
-        
-        <div class="container">
-            <div class="boxA">left half
-                <button class="button button1">Forward</button>
-                <button class="button button2">Backward</button>
-                <button class="button button3">Right</button>
-                <button class="button button4">Left</button>
-                <button class="button button5">Stop</button>
-            </div>
-            <div class="boxB">
-                <img src="stream.mjpg" width="640" height="550">
-                    </div>
-            <div style="clear:both;"></div>
-        </div>
-        
+    <div class="header", style="text-align:center">
+    <h1>Car control</h1>
+    </div>
+    <div class="videoFeed", style="text-align:center">
+    <img src="stream.mjpg" width="100%" height="60%">
+    </div>
+    <div class="controlBox">
+    <div class="upperBox", style="text-align:center">
+    <button class="button button1">Forward</button>
+    </div>
+    <div class="middleBox", style="text-align:center">
+    <button class="button button4">Left</button>
+    <button class="button button5">Stop</button>
+    <button class="button button3">Right</button>
+    </div>
+    <div class="lowerBox", style="text-align:center">
+    <button class="button button2">Backward</button>
+    </div>
+    </div>
     </body>
-</html>
-"""
+    <script>
+    var button_c = "left";
+    $.post('localhost',{
+    boton: button_c,
+    },function(res){
+    console.log(res);
+    });
+    </script>
+    </html>
+    """
+
 
 class StreamingOutput(object):
     def __init__(self):
@@ -204,6 +206,16 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
                                 'Removed streaming client %s: %s',
                                 self.client_address, str(e))
 
+def do_POST(self):
+    content_length = int(self.headers['Content-Length'])
+    body = self.rfile.read(content_length)
+    self.send_response(200)
+    self.end_headers()
+    response = BytesIO()
+    response.write(b'This is POST request. ')
+    response.write(b'Received: ')
+    response.write(body)
+    self.wfile.write(response.getvalue())
 
 class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
     allow_reuse_address = True
