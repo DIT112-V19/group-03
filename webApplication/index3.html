@@ -222,27 +222,27 @@
 			
 			forward.onclick = function(){
 				$.post('172.20.10.6',{
-      	command: w
+      	command: accelerate
 				});
 			}	
 			backward.onclick = function(){
 				$.post('172.20.10.6',{
-      	command: s
+      	command: decelerate
 				});
 			}	
 			left.onclick = function(){
 				$.post('172.20.10.6',{
-      	command: a
+      	command: turnLeft
 				});
 			}	
 			right.onclick = function(){
 				$.post('172.20.10.6',{
-      	command: d
+      	command: turnRight
 				});
 			}	
 			stop.onclick = function(){
 				$.post('172.20.10.6',{
-      	command: q
+      	command: stop
 				});
 			}	
 
