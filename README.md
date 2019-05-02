@@ -16,9 +16,9 @@ We are already provided with a car to use, alongside an arduino and our own web-
 - Raspberry Pi 3 and its camera
 
 ## Developers
-Linnea Stigholt
-Fredrik Sjögren 
-Jakob Walter
-Oscar Bogren
-Hannes Ringblom
-Nafen Haj Ahmad
+- Linnea Stigholt
+- Fredrik Sjögren 
+- Jakob Walter
+- Oscar Bogren
+- Hannes Ringblom
+- Nafen Haj Ahmad
