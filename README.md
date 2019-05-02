@@ -8,3 +8,17 @@ Our main goal with the product is to try and provide a device that could be used
 
 ## How are you going to make it?
 We are already provided with a car to use, alongside an arduino and our own web-connected devices. The camera feed will be provided through a Raspberry Pi Camera V2 which is intended to be fitted onto the cars front, which is then interfaced with the web application which is hosted on a Raspberry Pi. Using voice to text technology from open-source libraries, we can convert voice-lines into strings that help the car recognize simple commands to make it perform different actions. This will be done as a feature in the application.
+
+## Hardware
+- Smartcar 
+- Arduino Mega
+- Ultra sonic sensor
+- Raspberry Pi 3 and its camera
+
+## Developers
+Linnea Stigholt
+Fredrik Sjögren 
+Jakob Walter
+Oscar Bogren
+Hannes Ringblom
+Nafen Haj Ahmad
