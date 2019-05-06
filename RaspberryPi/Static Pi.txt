@@ -1,0 +1,13 @@
+sudo ifconfig (this is to check what the broadcast address is and the gateway) 
+
+sudo nano /etc/dhcpcd.conf (this is where you write the code to make the ip address static)
+
+Interface wlan0
+
+static ip_address=172.20.10.6/28
+static routers=172.20.10.1
+static domain_name_servers=172.20.10.1
+
+control C / Y / Enter  (To save and exit)
+
+reboot 
