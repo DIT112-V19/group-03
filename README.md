@@ -18,7 +18,7 @@ We are already provided with a car to use, alongside an arduino and our own web-
 ## Developers
 - Linnea Stigholt
 - Fredrik Sjögren 
-- Jakob Walter
+- Jacob Walter
 - Oscar Bogren
 - Hannes Ringblom
 - Nafen Haj Ahmad
