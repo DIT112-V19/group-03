@@ -10,7 +10,9 @@
         body {
         font-family: "courier", courier, sans-serif;
         background-color: #ffffff;
-            height: 100%;
+        max-height:50%;
+        position: sticky;
+
         }
         .header {
         width:90%;
@@ -26,6 +28,7 @@
         }
         .controlBox {
         width: 60%;
+        height: 60%
         border: 2px solid #6F6F6F;
         margin: auto;
         }
@@ -65,6 +68,7 @@
         .button:active{
         background-color: #618761;
         box-shadow: 1px #666;
+        transform: translateY(3px);
         }
         .button:hover {
         background-color: #7B9565;
@@ -83,38 +87,40 @@
         color: white;
         }
       .button6 {
-                position: absolute;
+          position: absolute;
           background-color: #A4B88D;
           border : none;
           color: white;
           padding: 12px 16px;
           font-size: 16px;
           cursor: pointer;
-                transition: 0.3s;
-                border-radius: 10px; 
+          transition: 0.3s;
+          border-radius: 10px;
         }
-        .button6:hover {
-          background-color: #7B9565;
-        }
+
+
         /*Code to enable FullScreen*/
         #videoStream {
           border-radius: 5px;
           cursor: pointer;
           transition: 0.3s;
         }
-        
+        img {
+            border-radius: 13px;
+            }
+
         /* The background of the fullScreen */
         .fullScreen {
-          display: none; 
+          display: none;
           position: fixed; /* Stay in place */
           z-index: 1; /* Sit on top */
-          padding-top: 20px; 
+          padding-top: 20px;
         padding-bottom: 10px;
           left: 0;
           top: 0;
-          width: 100%; 
-          height: 100%; 
-          background-color: rgb(0,0,0); 
+          width: 100%;
+          height: 100%;
+          background-color: rgb(0,0,0);
           background-color: rgba(0,0,0,0.9); /* Black with opacity */
           }
         /* Content of the fullScreen(image) */
@@ -124,7 +130,7 @@
           width: 95%;
           height: 95%;  /* This needs to be changed to adapt to the screen (always fill) */
         }
-    
+
         /* Animation */
         .fullScreen-content {
           -webkit-animation-name: zoom;
@@ -132,7 +138,7 @@
           animation-name: zoom;
           animation-duration: 0.1s;
         }
-    
+
         @-webkit-keyframes zoom {
           from {-webkit-transform:scale(0)}
           to {-webkit-transform:scale(1)}
@@ -141,7 +147,7 @@
           from {transform:scale(0)}
           to {transform:scale(1)}
         }
-    
+
         /* The Close Button */
         .close {
           position: absolute;
@@ -158,7 +164,7 @@
           text-decoration: none;
           cursor: pointer;
         }
-    
+
         /* Adapted fullScreen and buttons to smaller screens */
         @media only screen and (max-width: 800px){
                 .videoFeed {
@@ -167,26 +173,26 @@
                 .controlBox {
                     width: 90%
                 }
-          .fullScreen-content {
-            width: 100%;
-          }
-        .button {
-            width: 90px;
-          font-size: 12px;
-        }  
-        .button5 {
-            width: 70px;
-            height: 70px;  
-          }
-        }
+                .fullScreen-content {
+                  width: 100%;
+                }
+                .button {
+                  width: 90px;
+                  font-size: 12px;
+                  }
+                .button5 {
+                  width: 70px;
+                  height: 70px;
+                  }
+                }
         </style>
         </head>
-    
+
         <body>
         <div class="header", style="text-align:center">
           <h1>Car control</h1>
       </div>
-      
+
             <div id="stream" class="videoFeed", style="text-align:right">
                 <button id="expand" class= "button6", type="button6"><i class="fa fa-expand"></i></button>
         <img id="normalStream" src="https://www.futurity.org/wp/wp-content/uploads/2018/04/pink-flowers-against-green_1600.jpg" style="width:100%;">
@@ -194,11 +200,12 @@
       <div id="fullScreen" class="fullScreen" style="text-align:center">
           <span class="close">&times;</span>
         <img class="fullScreen-content" id="fullStream" src="https://www.futurity.org/wp/wp-content/uploads/2018/04/pink-flowers-against-green_1600.jpg" style="width:100%;">
-      </div>      
-    
+      </div>
+
         <div class="controlBox">
           <div class="upperBox", style="text-align:center">
             <button id="forward" class="button" type="button">Forward</button>
+
           </div>
           <div class="middleBox", style="text-align:center">
           <button id="left" class="button" type="button">Left</button>
@@ -209,40 +216,40 @@
             <button id="backward" class="button" type="button">Backward</button>
           </div>
             </div>
-    
-    
+
+
         <script>
-            var forward = document.getElementById('forward');
-            var left = document.getElementById('left');
-            var right = document.getElementById('right');
+            var accelerate = document.getElementById('forward');
+            var turnLeft = document.getElementById('left');
+            var turnRight = document.getElementById('right');
             var stop = document.getElementById('stop');
-            var backward = document.getElementById('backward');
-            
+            var decelerate = document.getElementById('backward');
+
             forward.onclick = function(){
                 $.post('172.20.10.6',{
         command: accelerate
                 });
-            }   
+            }
             backward.onclick = function(){
                 $.post('172.20.10.6',{
         command: decelerate
                 });
-            }   
+            }
             left.onclick = function(){
                 $.post('172.20.10.6',{
         command: turnLeft
                 });
-            }   
+            }
             right.onclick = function(){
                 $.post('172.20.10.6',{
         command: turnRight
                 });
-            }   
+            }
             stop.onclick = function(){
                 $.post('172.20.10.6',{
         command: stop
                 });
-            }   
+            }
         // Open the fullScreen
         var fullScreen = document.getElementById('fullScreen');
         var modalImg = document.getElementById("fullStream");
@@ -250,12 +257,12 @@
         expand.onclick = function(){
           fullScreen.style.display = "block";
         }
-    
+
         var span = document.getElementsByClassName("close")[0];
       span.onclick = function() {
           fullScreen.style.display = "none";
             }
-      
+
         </script>
         </body>
 </html>
