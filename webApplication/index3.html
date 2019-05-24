@@ -36,28 +36,334 @@
         margin: auto;
         }
         .leftBox {
-        width: 70%; 
-        float: left;  
+        width: 70%;
+        float: left;
         }
         .rightBox {
-        width: 30%; 
-        float: right;   
+        width: 30%;
+        display:flex;
+        justify-content: center;
+
         }
         .upperBox {
         width: 90%;
-        padding: 10px;
         margin: auto;
+        
         }
         .middleBox {
         width: 90%;
-        padding: 12px;
         margin: auto;
+
         }
         .lowerBox {
         width: 90%;
-        padding: 12px;
         margin: auto;
+
         }
+        .left {
+          display: inline-block;
+          width: 5em;
+          height: 5em;
+          border: 0.5em solid #333;
+          border-radius: 50%;
+          margin-right: 1.5em;
+          background-color: white;
+        }
+
+        .left:after {
+          content: '';
+        	display: inline-block;
+          margin-top: 1.05em;
+          margin-left: 0.6em;
+          width: 1.6em;
+          height: 1.6em;
+          border-top: 0.5em solid #333;
+          border-right: 0.5em solid #333;
+          -moz-transform: rotate(-135deg);
+          -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+        }
+        .left:active{
+        background-color: #808080;
+        box-shadow: 1px #666;
+        transform: translateY(3px);
+        }
+        .left:hover {
+        background-color: #808080;
+        border: 2px solid #white;
+        color: black;
+        }
+
+
+        .top {
+          display: inline-block;
+          width: 5em;
+          height: 5em;
+          border: 0.5em solid #333;
+          border-radius: 50%;
+          margin-right: 0.75em;
+          background-color: white;
+        }
+
+        .top:after {
+          content: '';
+        	display: inline-block;
+          margin-top: 1.4em;
+          width: 1.6em;
+          height: 1.6em;
+          border-top: 0.5em solid #333;
+          border-right: 0.5em solid #333;
+          -moz-transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+        .top:active{
+        background-color: #808080;
+        box-shadow: 1px #666;
+        transform: translateY(3px);
+        }
+        .top:hover {
+        background-color: #808080;
+        border: 2px solid #white;
+        color: black;
+        }
+
+        .topRight {
+          display: inline-block;
+          width: 5em;
+          height: 5em;
+          border: 0.5em solid #333;
+          border-radius: 50%;
+          margin-right: 0.75em;
+          background-color: white;
+        }
+
+        .topRight:after {
+          content: '';
+        	display: inline-block;
+          margin-top: 1.4em;
+          width: 1.6em;
+          height: 1.6em;
+          border-top: 0.5em solid #333;
+          border-right: 0.5em solid #333;
+          -moz-transform: rotate(-22.5deg);
+          -webkit-transform: rotate(-22.5deg);
+          transform: rotate(-22.5deg);
+        }
+        .topRight:active{
+        background-color: #808080;
+        box-shadow: 1px #666;
+        transform: translateY(3px);
+        }
+        .topRight:hover {
+        background-color: #808080;
+        border: 2px solid #white;
+        color: black;
+        }
+
+
+        .topLeft {
+          display: inline-block;
+          width: 5em;
+          height: 5em;
+          border: 0.5em solid #333;
+          border-radius: 50%;
+          margin-right: 0.75em;
+          background-color: white;
+        }
+
+        .topLeft:after {
+          content: '';
+          display: inline-block;
+          margin-top: 1em;
+          width: 1.6em;
+          height: 1.6em;
+          border-top: 0.5em solid #333;
+          border-right: 0.5em solid #333;
+          -moz-transform: rotate(-67.5deg);
+          -webkit-transform: rotate(-67.5deg);
+          transform: rotate(-67.5deg);
+          color:white;
+        }
+        .topLeft:active{
+        background-color: #808080;
+        box-shadow: 1px #666;
+        transform: translateY(3px);
+        }
+        .topLeft:hover {
+        background-color: #808080;
+        border: 2px solid #white;
+        color: black;
+        }
+
+
+        .bottom {
+          display: inline-block;
+          width: 5em;
+          height: 5em;
+          border: 0.5em solid #333;
+          border-radius: 50%;
+          margin-left: 0.75em;
+          background-color: white;
+        }
+
+        .bottom:after {
+          content: '';
+        	display: inline-block;
+          margin-top: 0.6em;
+          width: 1.6em;
+          height: 1.6em;
+          border-top: 0.5em solid #333;
+          border-right: 0.5em solid #333;
+          -moz-transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+        }
+        .bottom:active{
+        background-color: #808080;
+        box-shadow: 1px #666;
+        transform: translateY(3px);
+        }
+        .bottom:hover {
+        background-color: #808080;
+        border: 2px solid #white;
+        color: black;
+        }
+
+
+        .bottomLeft {
+          display: inline-block;
+          width: 5em;
+          height: 5em;
+          border: 0.5em solid #333;
+          border-radius: 50%;
+          margin-left: 0.75em;
+          background-color: white;
+        }
+
+
+        .bottomLeft:after {
+          content: '';
+          display: inline-block;
+          margin-top: 0.6em;
+          width: 1.6em;
+          height: 1.6em;
+          border-top: 0.5em solid #333;
+          border-right: 0.5em solid #333;
+          -moz-transform: rotate(157.5deg);
+          -webkit-transform: rotate(157.5deg);
+          transform: rotate(157.5deg);
+        }
+        .bottomLeft:active{
+        background-color: #808080;
+        box-shadow: 1px #666;
+        transform: translateY(3px);
+        }
+        .bottomLeft:hover {
+        background-color: #808080;
+        border: 2px solid #white;
+        color: black;
+        }
+        .bottomRight {
+          display: inline-block;
+          width: 5em;
+          height: 5em;
+          border: 0.5em solid #333;
+          border-radius: 50%;
+          margin-left: 0.75em;
+          background-color: white;
+        }
+
+        .bottomRight:after {
+          content: '';
+          display: inline-block;
+          margin-top: 0.6em;
+          width: 1.6em;
+          height: 1.6em;
+          border-top: 0.5em solid #333;
+          border-right: 0.5em solid #333;
+          -moz-transform: rotate(112.5deg);
+          -webkit-transform: rotate(112.5deg);
+          transform: rotate(112,5.5deg);
+        }
+        .bottomRight:active{
+        background-color: #808080;
+        box-shadow: 1px #666;
+        transform: translateY(3px);
+        }
+        .bottomRight:hover {
+        background-color: #808080;
+        border: 2px solid #white;
+        color: black;
+        }
+
+        .right {
+          display: inline-block;
+          width: 5em;
+          height: 5em;
+          border: 0.5em solid #333;
+          border-radius: 50%;
+          margin-left: 1.5em;
+          background-color: white;
+        }
+
+        .right:after {
+          content: '';
+        	display: inline-block;
+          margin-top: 1.05em;
+          margin-left: -0.6em;
+          width: 1.6em;
+          height: 1.6em;
+          border-top: 0.5em solid #333;
+          border-right: 0.5em solid #333;
+          -moz-transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        .right:active{
+        background-color: #808080;
+        box-shadow: 1px #666;
+        transform: translateY(3px);
+        }
+        .right:hover {
+        background-color: #808080;
+        border: 2px solid #white;
+        color: black;
+        }
+        .stop {
+          display: inline-block;
+          width: 5em;
+          height: 5em;
+          border: 0.5em solid #333;
+          border-radius: 50%;
+          margin-left: 1.5em;
+          background-color: white;
+        }
+
+        .stop:after {
+
+        	display: inline-block;
+
+
+          margin-top: 1.05em;
+          margin-left: -0.6em;
+          width: 1.6em;
+          height: 1.6em;
+
+
+        }
+        .stop:active{
+        background-color: #808080;
+        box-shadow: 1px #666;
+        transform: translateY(3px);
+        }
+        .stop:hover {
+        background-color: #808080;
+        border: 2px solid #white;
+        color: black;
+        }
+
+
         /* button design */
         .button {
         background-color: rgb(136, 228, 230);
@@ -177,15 +483,15 @@
           text-decoration: none;
           cursor: pointer;
         }
-                      
+
         /* Speed controller */
         .btngroup {
-          color: black; 
+          color: black;
           background-color: rgb(136, 228, 230);
           text-align: center;
-          border: none; 
-          cursor: pointer; 
-          width: 45px; 
+          border: none;
+          cursor: pointer;
+          width: 45px;
           height: 40px;
           display: block; /* Make the buttons appear below each other */
         }
@@ -195,19 +501,19 @@
         }
         .buttonTop{
           border: 2px solid rgb(0, 0, 0);
-          border-top-left-radius: 15px; 
+          border-top-left-radius: 15px;
           border-top-right-radius: 15px;
           border-bottom: none;
-        } 
+        }
         .buttonEnd{
           border: 2px solid rgb(0, 0, 0);
           border-top: none;
-          border-bottom-left-radius: 15px; 
+          border-bottom-left-radius: 15px;
           border-bottom-right-radius: 15px;
-        }  
+        }
         .btngroup button:not(:last-child) {
-          border-bottom: none; 
-        } 
+          border-bottom: none;
+        }
         .active, .btngroup:hover {
           background-color: rgba(0, 0, 0, 0.29);
           color: rgb(0, 0, 0);
@@ -235,7 +541,7 @@
         }
         </style>
         </head>
-        
+
         <body>
         <div class="header", style="text-align:center">
           <h1 class= "box"> Car Control</h1>
@@ -251,20 +557,27 @@
         </div>
 
         <div class="controlBox">
-            <div class="leftBox">  
+            <div class="leftBox">
                 <div class="upperBox", style="text-align:center">
-                  <button id="forward" class="button" type="button">Forward</button>
+                  <button class="topLeft" style="margin:5px" id="topLeft"></button>
+                      <button class="top" style="margin:5px"id="forward"></button>
+                      <button class="topRight"style="margin:5px" id="topRight"></button>
+
                 </div>
                 <div class="middleBox", style="text-align:center">
-                  <button id="left" class="button" type="button">Left</button>
-                  <button id="stop" class="button button5" type="button5">Stop</button>
-                  <button id="right" class="button" type="button">Right</button>
+                  <button class="left" style="margin:5px"id="left"></button>
+                  <button class="stop"style="margin:5px" id="stop"> Stop</button>
+                  <button class="right"style="margin:5px" id="right"></button>
                 </div>
+
                 <div class="lowerBox", style="text-align:center">
-                  <button id="backward" class="button" type="button">Backward</button>
+                  <button class="bottomLeft"style="margin:5px" id="bottonLeft"</button>
+                  <button class="bottom"style="margin:5px" id="backward"</button>
+                  <button class="bottomRight"style="margin:5px" id="buttonRight" </button>
                 </div>
-            </div>      
-            <div class="rightBox">  
+
+            </div>
+            <div class="rightBox">
                 <div class="btngroup" id="btngroup">
                     <button class="btngroup buttonTop" id="high"> High</button>
                     <button class="btngroup buttonMid" id="Medium">Med</button>
@@ -273,11 +586,11 @@
                     <button class="btngroup buttonMid" id="Low">Low</button>
                     <button class="btngroup buttonEnd" id="Medium">Med</button>
                 </div>
-            </div>      
+            </div>
         </div>
 
         <script>
-        //steering button commands  
+        //steering button commands
           var accelerate = document.getElementById('forward');
           var turnLeft = document.getElementById('left');
           var turnRight = document.getElementById('right');
