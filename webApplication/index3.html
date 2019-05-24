@@ -9,20 +9,16 @@
         <style>
         body {
         font-family: "courier", courier, sans-serif;
-        background-color: rgb(136, 228, 230);
+        background-color:rgb(226, 177, 177);
         max-height:50%;
-        }
-        .box{
-          width: 90%;
-          padding: 10px;
-          margin: auto;
-          background-color: white;
-          font-style: italic;
         }
         .header {
         width:60%;
         padding: 10px;
         margin: auto;
+        color: rgb(89, 59, 59);
+		    font-family: 'Arvo', Georgia, Times, serif;
+		    font-size: 25px;
         }
         .videoFeed {
         width: 60%;
@@ -36,8 +32,8 @@
         margin: auto;
         }
         .leftBox {
-        width: 70%;
-        float: left;
+        width: 70%; 
+        float: left;  
         }
         .rightBox {
         width: 30%; 
@@ -46,19 +42,20 @@
         }
         .upperBox {
         width: 90%;
+        padding: none;
         margin: auto;
-        
         }
         .middleBox {
         width: 90%;
+        padding: none;
         margin: auto;
-
         }
         .lowerBox {
         width: 90%;
+        padding: none;
         margin: auto;
-
-        }
+        }    
+        /* button design */
         .left {
           display: inline-block;
           width: 5em;
@@ -66,12 +63,11 @@
           border: 0.5em solid #333;
           border-radius: 50%;
           margin-right: 1.5em;
-          background-color: white;
+          background-color: rgb(226, 177, 177);
         }
-
         .left:after {
           content: '';
-        	display: inline-block;
+            display: inline-block;
           margin-top: 1.05em;
           margin-left: 0.6em;
           width: 1.6em;
@@ -89,11 +85,9 @@
         }
         .left:hover {
         background-color: #808080;
-        border: 2px solid #white;
+        border: 2px solid white;
         color: black;
         }
-
-
         .top {
           display: inline-block;
           width: 5em;
@@ -101,12 +95,11 @@
           border: 0.5em solid #333;
           border-radius: 50%;
           margin-right: 0.75em;
-          background-color: white;
+          background-color: rgb(226, 177, 177);
         }
-
         .top:after {
           content: '';
-        	display: inline-block;
+            display: inline-block;
           margin-top: 1.4em;
           width: 1.6em;
           height: 1.6em;
@@ -123,10 +116,9 @@
         }
         .top:hover {
         background-color: #808080;
-        border: 2px solid #white;
+        border: 2px solid whitesmoke;
         color: black;
         }
-
         .topRight {
           display: inline-block;
           width: 5em;
@@ -134,12 +126,11 @@
           border: 0.5em solid #333;
           border-radius: 50%;
           margin-right: 0.75em;
-          background-color: white;
+          background-color: rgb(226, 177, 177);
         }
-
         .topRight:after {
           content: '';
-        	display: inline-block;
+            display: inline-block;
           margin-top: 1.4em;
           width: 1.6em;
           height: 1.6em;
@@ -156,11 +147,9 @@
         }
         .topRight:hover {
         background-color: #808080;
-        border: 2px solid #white;
+        border: 2px solid whitesmoke;
         color: black;
         }
-
-
         .topLeft {
           display: inline-block;
           width: 5em;
@@ -168,9 +157,8 @@
           border: 0.5em solid #333;
           border-radius: 50%;
           margin-right: 0.75em;
-          background-color: white;
+          background-color: rgb(226, 177, 177);
         }
-
         .topLeft:after {
           content: '';
           display: inline-block;
@@ -191,11 +179,9 @@
         }
         .topLeft:hover {
         background-color: #808080;
-        border: 2px solid #white;
+        border: 2px solid white;
         color: black;
         }
-
-
         .bottom {
           display: inline-block;
           width: 5em;
@@ -203,12 +189,11 @@
           border: 0.5em solid #333;
           border-radius: 50%;
           margin-left: 0.75em;
-          background-color: white;
+          background-color: rgb(226, 177, 177);
         }
-
         .bottom:after {
           content: '';
-        	display: inline-block;
+            display: inline-block;
           margin-top: 0.6em;
           width: 1.6em;
           height: 1.6em;
@@ -225,11 +210,9 @@
         }
         .bottom:hover {
         background-color: #808080;
-        border: 2px solid #white;
+        border: 2px solid white;
         color: black;
         }
-
-
         .bottomLeft {
           display: inline-block;
           width: 5em;
@@ -237,10 +220,8 @@
           border: 0.5em solid #333;
           border-radius: 50%;
           margin-left: 0.75em;
-          background-color: white;
+          background-color: rgb(226, 177, 177);
         }
-
-
         .bottomLeft:after {
           content: '';
           display: inline-block;
@@ -260,7 +241,7 @@
         }
         .bottomLeft:hover {
         background-color: #808080;
-        border: 2px solid #white;
+        border: 2px solid white;
         color: black;
         }
         .bottomRight {
@@ -270,9 +251,8 @@
           border: 0.5em solid #333;
           border-radius: 50%;
           margin-left: 0.75em;
-          background-color: white;
+          background-color: rgb(226, 177, 177);
         }
-
         .bottomRight:after {
           content: '';
           display: inline-block;
@@ -286,16 +266,15 @@
           transform: rotate(112,5.5deg);
         }
         .bottomRight:active{
-        background-color: #808080;
-        box-shadow: 1px #666;
-        transform: translateY(3px);
+          background-color: #808080;
+          box-shadow: 1px #666;
+          transform: translateY(3px);
         }
         .bottomRight:hover {
-        background-color: #808080;
-        border: 2px solid #white;
-        color: black;
+          background-color: #808080;
+          border: 2px solid white;
+          color: black;
         }
-
         .right {
           display: inline-block;
           width: 5em;
@@ -303,12 +282,11 @@
           border: 0.5em solid #333;
           border-radius: 50%;
           margin-left: 1.5em;
-          background-color: white;
+          background-color: rgb(226, 177, 177);
         }
-
         .right:after {
           content: '';
-        	display: inline-block;
+          display: inline-block;
           margin-top: 1.05em;
           margin-left: -0.6em;
           width: 1.6em;
@@ -320,14 +298,14 @@
           transform: rotate(45deg);
         }
         .right:active{
-        background-color: #808080;
-        box-shadow: 1px #666;
-        transform: translateY(3px);
+          background-color: #808080;
+          box-shadow: 1px #666;
+          transform: translateY(3px);
         }
         .right:hover {
-        background-color: #808080;
-        border: 2px solid #white;
-        color: black;
+          background-color: #808080;
+          border: 2px solid white;
+          color: black;
         }
         .stop {
           display: inline-block;
@@ -336,74 +314,27 @@
           border: 0.5em solid #333;
           border-radius: 50%;
           margin-left: 1.5em;
-          background-color: white;
+          background-color: rgb(226, 177, 177);
         }
-
         .stop:after {
-
-        	display: inline-block;
-
-
+          display: inline-block;
           margin-top: 1.05em;
           margin-left: -0.6em;
           width: 1.6em;
           height: 1.6em;
-
-
         }
         .stop:active{
-        background-color: #808080;
-        box-shadow: 1px #666;
-        transform: translateY(3px);
+          background-color: #808080;
+          box-shadow: 1px #666;
+          transform: translateY(3px);
         }
         .stop:hover {
-        background-color: #808080;
-        border: 2px solid #white;
-        color: black;
+          background-color: #808080;
+          border: 2px solid white;
+          color: black;
         }
-
-
-        /* button design */
-        .button {
-        background-color: rgb(136, 228, 230);
-        border-radius:15px;
-        box-shadow: 0 1px #C9C9C9;
-        color: white;
-        padding: 17px 17px;
-        text-align: center;
-        display: inline-block;
-        margin:auto;
-        font-size: 16px;
-        -webkit-transition-duration: 0.4s;
-        transition-duration: 0.1s;
-        cursor: pointer;
-        border: 2px solid #91AE79;
-        border-color: white;
-        width: 130px;
-        }
-        .button:active{
-        background-color: #808080;
-        box-shadow: 1px #666;
-        transform: translateY(3px);
-        }
-        .button:hover {
-        background-color: #808080;
-        border: 2px solid #ffffff;
-        color: black;
-        }
-        .button5 {
-        color: white;
-        border-radius: 50px;
-        border-color: white;
-        width: 80px;
-        height: 80px;
-        }
-        .button5:hover {
-        background-color: #BB3C3C;
-        border: 2px solid #BB3C3C;
-        color: white;
-        }
-      .button6 {
+        /* expand feed button design */  
+        .button6 {
           position:relative;
           top:50px;
           border:none;
@@ -416,7 +347,6 @@
           transition: 0.3s;
           border-radius: 12px;
         }
-
         /*Code to enable FullScreen*/
         #videoStream {
           border-radius: 5px;
@@ -426,7 +356,6 @@
         img {
             border-radius: 12px;
         }
-
         /* The background of the fullScreen */
         .fullScreen {
           display: none;
@@ -448,7 +377,6 @@
           width: 95%;
           height: 95%;  /* This needs to be changed to adapt to the screen (always fill) */
         }
-
         /* Animation */
         .fullScreen-content {
           -webkit-animation-name: zoom;
@@ -456,7 +384,6 @@
           animation-name: zoom;
           animation-duration: 0.1s;
         }
-
         @-webkit-keyframes zoom {
           from {-webkit-transform:scale(0)}
           to {-webkit-transform:scale(1)}
@@ -465,13 +392,12 @@
           from {transform:scale(0)}
           to {transform:scale(1)}
         }
-
         /* The Close Button */
         .close {
           position: absolute;
           top: 15px;
           right: 35px;
-          color: rgb(136, 228, 230);
+          color: rgb(89, 59, 59);
           font-size: 40px;
           font-weight: bold;
           transition: 0.3s;
@@ -482,15 +408,14 @@
           text-decoration: none;
           cursor: pointer;
         }
-
         /* Speed controller */
         .btngroup {
-          color: black;
-          background-color: rgb(136, 228, 230);
+          color: black; 
+          background-color: rgb(226, 177, 177);
           text-align: center;
-          border: none;
-          cursor: pointer;
-          width: 45px;
+          border: none; 
+          cursor: pointer; 
+          width: 45px; 
           height: 40px;
           display: block; /* Make the buttons appear below each other */
         }
@@ -500,42 +425,41 @@
         }
         .buttonTop{
           border: 2px solid rgb(0, 0, 0);
-          border-top-left-radius: 15px;
+          border-top-left-radius: 15px; 
           border-top-right-radius: 15px;
           border-bottom: none;
-        }
+        } 
         .buttonEnd{
           border: 2px solid rgb(0, 0, 0);
           border-top: none;
-          border-bottom-left-radius: 15px;
+          border-bottom-left-radius: 15px; 
           border-bottom-right-radius: 15px;
-        }
+        }  
         .btngroup button:not(:last-child) {
-          border-bottom: none;
-        }
+          border-bottom: none; 
+        } 
         .active, .btngroup:hover {
           background-color: rgba(0, 0, 0, 0.29);
           color: rgb(0, 0, 0);
         }
-
         /* Adapted fullScreen and buttons to smaller screens */
-        @media only screen and (max-width: 975px){
-         .videoFeed {
-          width: 90%
+        @media only screen and (max-width: 800px){
+        .videoFeed {
+            width: 90%
           }
-          .controlBox {
-           width: 90%
+        .controlBox {
+            width: 90%
           }
-          .fullScreen-content {
-          width: 100%;
+        .fullScreen-content {
+            width: 100%;
           }
-          .button {
-          width: 90px;
-          font-size: 12px;
+        .button {
+            width: 90px;
+            font-size: 12px;
           }
-          .button5 {
-          width: 70px;
-          height: 70px;
+        .button5 {
+            width: 70px;
+            height: 70px;
           }
         }
         </style>
@@ -545,36 +469,34 @@
         <div class="header", style="text-align:center">
           <h1 class= "box"> Car Control</h1>
         </div>
-
+        
         <div id="stream" class="videoFeed", style="text-align:right">
             <button id="expand" class= "button6", type="button6"><i class="fa fa-expand"></i></button>
-        <img id="normalStream" src="https://ak4.picdn.net/shutterstock/videos/29511124/thumb/8.jpg" style="width:100%;">
+            <img id="normalStream" src="https://ak4.picdn.net/shutterstock/videos/29511124/thumb/8.jpg" style="width:100%;">
         </div>
         <div id="fullScreen" class="fullScreen" style="text-align:center">
             <span class="close">&times;</span>
-        <img class="fullScreen-content" id="fullStream" src="https://ak4.picdn.net/shutterstock/videos/29511124/thumb/8.jpg" style="width:100%;">
+            <img class="fullScreen-content" id="fullStream" src="https://ak4.picdn.net/shutterstock/videos/29511124/thumb/8.jpg" style="width:100%;">
         </div>
 
         <div class="controlBox">
-            <div class="leftBox">
-                <div class="upperBox", style="text-align:center">
-                  <button class="topLeft" style="margin:5px" id="topLeft"></button>
-                      <button class="top" style="margin:5px"id="forward"></button>
-                      <button class="topRight"style="margin:5px" id="topRight"></button>
-
-                </div>
-                <div class="middleBox", style="text-align:center">
-                  <button class="left" style="margin:5px"id="left"></button>
-                  <button class="stop"style="margin:5px" id="stop"> Stop</button>
-                  <button class="right"style="margin:5px" id="right"></button>
-                </div>
-
-                <div class="lowerBox", style="text-align:center">
-                  <button class="bottomLeft"style="margin:5px" id="bottonLeft"</button>
-                  <button class="bottom"style="margin:5px" id="backward"</button>
-                  <button class="bottomRight"style="margin:5px" id="buttonRight" </button>
-                </div>
-            </div>      
+            <div class="leftBox">  
+            <div class="upperBox", style="text-align:center">
+                <button class="topLeft" style="margin:8.5px" id="topLeft"></button>
+                <button class="top" style="margin:8.5px"id="forward"></button>
+                <button class="topRight"style="margin:8.5px" id="topRight"></button>
+            <div class="middleBox", style="text-align:center">
+                <button class="left" style="margin:8.5px"id="left"></button>
+                <button class="stop"style="margin:8.5px" id="stop"> Stop</button>
+                <button class="right"style="margin:8.5px" id="right"></button>
+             </div>
+            <div class="lowerBox", style="text-align:center">
+                <button class="bottomLeft"style="margin:8.5px" id="bottomLeft"></button>
+                <button class="bottom"style="margin:8.5px" id="backward"></button>
+                <button class="bottomRight"style="margin:8.5px" id="bottomRight"></button>
+            </div>
+            </div>
+            </div>
             <div class="rightBox">  
                 <div class="btngroup", id="btngroup">
                     <button class="btngroup buttonTop" id="high">High</button>
@@ -584,16 +506,15 @@
                     <button class="btngroup buttonMid" id="LowB">Low</button>
                     <button class="btngroup buttonEnd" id="MediumB">Med</button>
                 </div>
-            </div>
-        </div>
-
+            </div>          
+        </div>    
         <script>
-        //steering button commands          
             var forward = document.getElementById('forward');
             var turnLeft = document.getElementById('left');
             var turnRight = document.getElementById('right');
             var stop = document.getElementById('stop');
             var backward = document.getElementById('backward');
+
             var forwardSmallTurnLeft = document.getElementById('topLeft');
             var forwardSmallTurnRight = document.getElementById('topRight');
             var backwardSmallTurnLeft = document.getElementById('bottomLeft');
@@ -605,106 +526,106 @@
             var noSpeed = document.getElementById ('Stop');
             var lowSpeedB = document.getElementById('LowB');
             var highSpeedB = document.getElementById('MediumB');
-			
-          forward.onclick = function(){
-            $.post('172.20.10.6',{
-            command: forward
-            });
-          }	
-          backward.onclick = function(){
-            $.post('172.20.10.6',{
-            command: backward
-            });
-          }	
-          turnLeft.onclick = function(){
-            $.post('172.20.10.6',{
-            command: "turnLeft"
-            });
-          }	
-          turnRight.onclick = function(){
-            $.post('172.20.10.6',{
-            command: "turnRight"
-            });
-          }	
-          stop.onclick = function(){
-            $.post('172.20.10.6',{
-            command: "stop"
-            });
-          }
-          forwardSmallTurnLeft.onclick = function(){
-            $.post('172.20.10.6',{
-            command: forwardSmallTurnLeft
-            });
-          }
-          forwardSmallTurnRight.onclick = function(){
-            $.post('172.20.10.6',{
-            command: forwardSmallTurnRight
-            });
-          }
-          backwardSmallTurnLeft.onclick = function(){
-            $.post('172.20.10.6',{
-            command: backwardSmallTurnLeft
-            });
-          }
-          backwardSmallTurnRight.onclick = function(){
-            $.post('172.20.10.6',{
-            command: backwardSmallTurnRight
-            });
-          }
-          maxSpeed.onclick = function(){
-            $.post('172.20.10.6',{
-            command: maxSpeed
-            });
-          }
-          medSpeed.onclick = function(){
-            $.post('172.20.10.6',{
-            command: medSpeed
-            });
-          }
-          lowSpeed.onclick = function(){
-            $.post('172.20.10.6',{
-            command: lowSpeed
-            });
-          }
-          noSpeed.onclick = function(){
-            $.post('172.20.10.6',{
-            command: noSpeed
-            });
-          }
-          lowSpeedB.onclick = function(){
-            $.post('172.20.10.6',{
-            command: lowSpeedB
-            });
-          }
-          highSpeedB.onclick = function(){
-            $.post('172.20.10.6',{
-            command: highSpeedB
-            });
-          }
-
+        
+            forward.onclick = function(){
+                $.post('172.20.10.6',{
+                command: forward
+                });
+            }	
+            backward.onclick = function(){
+                $.post('172.20.10.6',{
+                command: backward
+                });
+            }	
+            turnLeft.onclick = function(){
+                $.post('172.20.10.6',{
+                command: turnLeft
+                });
+            }	
+            turnRight.onclick = function(){
+                $.post('172.20.10.6',{
+                command: turnRight
+                });
+            }	
+            stop.onclick = function(){
+                $.post('172.20.10.6',{
+                command: stop
+                });
+            }
+            forwardSmallTurnLeft.onclick = function(){
+                $.post('172.20.10.6',{
+                command: forwardSmallTurnLeft
+                });
+            }
+            forwardSmallTurnRight.onclick = function(){
+                $.post('172.20.10.6',{
+                command: forwardSmallTurnRight
+                });
+            }
+            backwardSmallTurnLeft.onclick = function(){
+                $.post('172.20.10.6',{
+                command: backwardSmallTurnLeft
+                });
+            }
+            backwardSmallTurnRight.onclick = function(){
+                $.post('172.20.10.6',{
+                command: backwardSmallTurnRight
+                });
+            }
+            maxSpeed.onclick = function(){
+                $.post('172.20.10.6',{
+                command: maxSpeed
+                });
+            }
+            medSpeed.onclick = function(){
+                $.post('172.20.10.6',{
+                command: medSpeed
+                });
+            }
+            lowSpeed.onclick = function(){
+                $.post('172.20.10.6',{
+                command: lowSpeed
+                });
+            }
+            noSpeed.onclick = function(){
+                $.post('172.20.10.6',{
+                command: noSpeed
+                });
+            }
+            lowSpeedB.onclick = function(){
+                $.post('172.20.10.6',{
+                command: lowSpeedB
+                });
+            }
+            highSpeedB.onclick = function(){
+                $.post('172.20.10.6',{
+                command: highSpeedB
+                });
+            }
+            
         // Open the fullScreen
-          var fullScreen = document.getElementById('fullScreen');
-          var modalImg = document.getElementById("fullStream");
-          var expand = document.getElementById("expand");
-          expand.onclick = function(){
-          fullScreen.style.display = "block";
-          }
+            var fullScreen = document.getElementById('fullScreen');
+            var modalImg = document.getElementById("fullStream");
+            var expand = document.getElementById("expand");
+            expand.onclick = function(){
+            fullScreen.style.display = "block";
+            }
 
-          var span = document.getElementsByClassName("close")[0];
-          span.onclick = function() {
-          fullScreen.style.display = "none";
-          }
-
-          var header = document.getElementById("btngroup");
-          var btns = header.getElementsByClassName("btngroup");
-          for (var i = 0; i < btns.length; i++) {
+            var span = document.getElementsByClassName("close")[0];
+            span.onclick = function() {
+            fullScreen.style.display = "none";
+            }
+            
+        // Mark the lastest pressed button  
+            var header = document.getElementById("btngroup");
+            var btns = header.getElementsByClassName("btngroup");
+            for (var i = 0; i < btns.length; i++) {
             btns[i].addEventListener("click", function() {
             var current = document.getElementsByClassName("active");
             current[0].className = current[0].className.replace(" active", "");
             this.className += " active";
             });
           }
-
         </script>
         </body>
 </html>
