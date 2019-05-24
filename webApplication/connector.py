@@ -213,6 +213,8 @@ PAGE="""\
 	    <div class="controlBox">
 	      <div class="upperBox", style="text-align:center">
 	        <button id="forward" class="button" type="button" onClick="forward()" >Forward</button>
+					<button id="forwardSmallTurnLeft" class="button" type="button" onClick="forwardSmallTurnLeft()" >FSTL</button>
+					<button id="forwardSmallTurnRight" class="button" type="button" onClick="forwardSmallTurnRight()" > FSTR</button>
 	      </div>
 	      <div class="middleBox", style="text-align:center">
           <button id="left" class="button" type="button" onClick="left()">Left</button>
@@ -221,6 +223,8 @@ PAGE="""\
 	      </div>
 	      <div class="lowerBox", style="text-align:center">
 	        <button id="backward" class="button" type="button" onClick="backward()">Backward</button>
+					<button id="backwardSmallTurnLeft" class="button" type="button" onClick="backwardSmallTurnLeft()">BSTL</button>
+					<button id="backwardSmallTurnRight" class="button" type"button" onClick="backwardSmallTurnRight()">BSTR</button>		
 	      </div>
 	    </div>
 	
@@ -285,6 +289,9 @@ PAGE="""\
 	    </body>
 </html>
 """
+#A try except lopp for connecting to the Arduino, name of the port we're connecting to and the 
+# buad-rate of the arudino sketch.
+
 try:
     ser = serial.Serial('/dev/ttyACM0',9600)
     print("Arduino Connected")
@@ -354,20 +361,53 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
         response.write(b'Received: ')
         response.write(body)
         self.wfile.write(response.getvalue())
-        if b'accelerate' in body: 
+				#Here we're checking the body for different values which decides what should be written to the Arduino
+
+        if b'forward' in body: 	#Setting the angle of the car to 0 degrees (Backward)
             ser.write(b'w \n')
 
-        elif b'decelerate' in body:
+        elif b'backward' in body:	#Setting the angle of the car to 0 degrees (Backward)
             ser.write(b's \n')
 
-        elif b'turnLeft' in body:
+        elif b'turnLeft' in body:		#Making the car take a left turn for -75 degrees
             ser.write(b'a \n')
 
-        elif b'turnRight' in body:
+        elif b'turnRight' in body:	#Making the car take a right turn for 75 degrees
             ser.write(b'd \n')
 
-        elif b'stop' in body:
-            ser.write(b'q \n')
+        elif b'stop' in body:				#Stopping the car, no matter the speed or angle...
+            ser.write(b'r \n')
+
+				elif b'forwardSmallTurnLeft' in body: #Making the car take a small left turn for -45 degrees (Forwards)
+					ser.write(b'q \n')
+				
+				elif b'forwardSmallTurnRight' in body: #Making the car take a small right turn for 45 degrees (Forwards)
+					ser.write(b'e \n')
+				
+				elif b'backwardSmallTurnLeft' in body: #Making the car take a small left turn for -45 degrees (Backwards)
+					ser.write(b'z \n')
+
+				elif b'backwardSmallTurnRight' in body: #Making the car take a small right turn for 45 degrees (Backwards)
+					ser.write(b'x \n')
+
+				elif b'maxSpeed' in body:  	#Fastest speed for the car, forward
+					ser.write(b'1 \n')
+				
+				elif b'medSpeed' in body:		#Medium speed for the car, forward
+					ser.write(b'2 \n')
+
+				elif b'lowSpeed' in body:		#Low speed for the car, forward
+					ser.write(b'3 \n')
+				
+				elif b'noSpeed' in body:		#No speed for the car. Standing still
+					ser.write(b'4 \n')
+				
+				elif b'lowSpeedB' in body:		#Low speed for the car, backward
+					ser.write(b'5 \n') 
+
+				elif b'medSpeedB' in body:		#Medium speed for the car, backward
+					ser.write(b'6')
+
 
 class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
     allow_reuse_address = True
