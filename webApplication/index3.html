@@ -20,7 +20,7 @@
           font-style: italic;
         }
         .header {
-        width:90%;
+        width:60%;
         padding: 10px;
         margin: auto;
         }
@@ -41,7 +41,8 @@
         }
         .rightBox {
         width: 30%; 
-        float: right;   
+        display: flex;
+        justify-content: center; 
         }
         .upperBox {
         width: 90%;
@@ -214,7 +215,7 @@
         }
 
         /* Adapted fullScreen and buttons to smaller screens */
-        @media only screen and (max-width: 900px){
+        @media only screen and (max-width: 975px){
          .videoFeed {
           width: 90%
           }
@@ -265,45 +266,111 @@
                 </div>
             </div>      
             <div class="rightBox">  
-                <div class="btngroup" id="btngroup">
-                    <button class="btngroup buttonTop" id="high"> High</button>
+                <div class="btngroup", id="btngroup">
+                    <button class="btngroup buttonTop" id="high">High</button>
                     <button class="btngroup buttonMid" id="Medium">Med</button>
                     <button class="btngroup buttonMid" id="Low">Low</button>
                     <button class="btngroup buttonMid active" id="Stop">Stop</button>
-                    <button class="btngroup buttonMid" id="Low">Low</button>
-                    <button class="btngroup buttonEnd" id="Medium">Med</button>
+                    <button class="btngroup buttonMid" id="LowB">Low</button>
+                    <button class="btngroup buttonEnd" id="MediumB">Med</button>
                 </div>
             </div>      
         </div>
 
         <script>
-        //steering button commands  
-          var accelerate = document.getElementById('forward');
-          var turnLeft = document.getElementById('left');
-          var turnRight = document.getElementById('right');
-          var stop = document.getElementById('stop');
-          var decelerate = document.getElementById('backward');
+        //steering button commands          
+            var forward = document.getElementById('forward');
+            var turnLeft = document.getElementById('left');
+            var turnRight = document.getElementById('right');
+            var stop = document.getElementById('stop');
+            var backward = document.getElementById('backward');
+            var forwardSmallTurnLeft = document.getElementById('topLeft');
+            var forwardSmallTurnRight = document.getElementById('topRight');
+            var backwardSmallTurnLeft = document.getElementById('bottomLeft');
+            var backwardSmallTurnRight = document.getElementById('bottomRight');
 
+            var maxSpeed = document.getElementById('high');
+            var medSpeed = document.getElementById('Medium');
+            var lowSpeed = document.getElementById('Low');
+            var noSpeed = document.getElementById ('Stop');
+            var lowSpeedB = document.getElementById('LowB');
+            var highSpeedB = document.getElementById('MediumB');
+			
           forward.onclick = function(){
             $.post('172.20.10.6',{
-            command: accelerate});
-            }
+            command: forward
+            });
+          }	
           backward.onclick = function(){
             $.post('172.20.10.6',{
-            command: decelerate});
-            }
-          left.onclick = function(){
+            command: backward
+            });
+          }	
+          turnLeft.onclick = function(){
             $.post('172.20.10.6',{
-            command: turnLeft});
-            }
-          right.onclick = function(){
+            command: "turnLeft"
+            });
+          }	
+          turnRight.onclick = function(){
             $.post('172.20.10.6',{
-            command: turnRight});
-            }
+            command: "turnRight"
+            });
+          }	
           stop.onclick = function(){
             $.post('172.20.10.6',{
-            command: stop});
-            }
+            command: "stop"
+            });
+          }
+          forwardSmallTurnLeft.onclick = function(){
+            $.post('172.20.10.6',{
+            command: forwardSmallTurnLeft
+            });
+          }
+          forwardSmallTurnRight.onclick = function(){
+            $.post('172.20.10.6',{
+            command: forwardSmallTurnRight
+            });
+          }
+          backwardSmallTurnLeft.onclick = function(){
+            $.post('172.20.10.6',{
+            command: backwardSmallTurnLeft
+            });
+          }
+          backwardSmallTurnRight.onclick = function(){
+            $.post('172.20.10.6',{
+            command: backwardSmallTurnRight
+            });
+          }
+          maxSpeed.onclick = function(){
+            $.post('172.20.10.6',{
+            command: maxSpeed
+            });
+          }
+          medSpeed.onclick = function(){
+            $.post('172.20.10.6',{
+            command: medSpeed
+            });
+          }
+          lowSpeed.onclick = function(){
+            $.post('172.20.10.6',{
+            command: lowSpeed
+            });
+          }
+          noSpeed.onclick = function(){
+            $.post('172.20.10.6',{
+            command: noSpeed
+            });
+          }
+          lowSpeedB.onclick = function(){
+            $.post('172.20.10.6',{
+            command: lowSpeedB
+            });
+          }
+          highSpeedB.onclick = function(){
+            $.post('172.20.10.6',{
+            command: highSpeedB
+            });
+          }
 
         // Open the fullScreen
           var fullScreen = document.getElementById('fullScreen');
