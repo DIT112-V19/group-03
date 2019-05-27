@@ -309,12 +309,12 @@ PAGE="""\
         
             accelerate.onclick = function(){
               $.post('172.20.10.6',{
-              command: "accelerate"
+              command: "forward"
               });
             }	
             decelerate.onclick = function(){
               $.post('172.20.10.6',{
-              command: "decelerate"
+              command: "backward"
               });
             }	
             turnLeft.onclick = function(){
