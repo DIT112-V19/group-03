@@ -1,13 +1,12 @@
 #include <Smartcar.h> 
 const unsigned int MAX_DISTANCE = 50;
-const int MAX_SPEED = 60; // Max speed for the car forward
-const int MIN_SPEED = -40; // Max speed for the car going backwards
 
 //Pins
 const int TRIGGER_PIN = 6; //D6
 const int ECHO_PIN = 7; //D7
 
 //Controls
+// All of these are changable depending on preference
 int slowSpeed = 20;
 int medSpeed = 40;
 int highSpeed = 60;
@@ -15,10 +14,8 @@ int slowBackSpeed = -30;
 int medBackSpeed = -50;
 int standStill = 0;
 const int beginDegrees = 0;
-const int lBigDegrees = -75; //degrees to turn left
-const int rBigDegrees = 75; //degrees to turn right
-const int lSmallDegrees = -45;
-const int rSmallDegrees = 45;
+const int lDegrees = -75; //degrees to turn left
+const int rDegrees = 75; //degrees to turn right
 int distance = 1;
 boolean obstacleFlag;
 int counter = 0;
@@ -45,7 +42,7 @@ void loop() {
   }
 
   if(counter == 0 && obstacleFlag && distance < 20 && distance > 0){ 
-    car.setSpeed(0); // Car will move backwards so that the user can start controlling it again
+    car.setSpeed(0); // Car will stop and let the user drive away from the obstacle
     car.setAngle(0);
     obstacleFlag = false;
     counter = 1500;
@@ -62,31 +59,16 @@ void loop() {
        car.setAngle(beginDegrees);
         break;
         
-      case 'a': // Turn left with a 75 degrees angle
-        car.setAngle(lBigDegrees);
+      case 'a': // Turning left
+        car.setAngle(lDegrees);
         break;
         
-      case 'd': //turn right with a 75 degrees angle 
-        car.setAngle(rBigDegrees);
+      case 'd': //turning right  
+        car.setAngle(rDegrees);
         break;
       
       case 's': // Backwards angle, not really nessecary but will keep for clarity
         car.setAngle(beginDegrees);
-        break;
-      
-      case 'q': 
-        car.setAngle(lSmallDegrees); // Turning right, but only 45 degrees
-        break;
-      case 'e':
-        car.setAngle(rSmallDegrees); // Turning left, but but only 45 degrees
-        break;
-        
-      case 'z':
-        car.setAngle(lSmallDegrees); // Turning left backwards
-        break;
-
-      case 'x': // Turning right backwards
-        car.setAngle(rSmallDegrees);
         break;
       
       case 'r': //stop (Car can now also be stopped with the slider but stop button is kept for security measures.)
