@@ -1,0 +1,13 @@
+Enabling/disabling interfaces in Raspberry pi:
+
+Using monitor or vnc viewer:
+1. Go to the raspberry symbol
+2. Navigate to 'Preferences' and on to 'Raspberry PI Configuration'
+3. In the new window, navigate to 'Interfaces'
+4. Enable or disable the interfaces as you wish and confirm with 'OK'
+
+Using ssh:
+
+1. sudo raspi-config
+2. in new window navigate to Interfacing Options
+3. enable or disable the interfaces as you wish and confirm with 'finish'
