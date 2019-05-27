@@ -27,11 +27,9 @@ PAGE="""\
         body {
         font-family: "courier", courier, sans-serif;
         background-color:rgb(226, 177, 177);
-        max-height:50%;
         }
         .header {
-        width:60%;
-        padding: 10px;
+        width:100%;
         margin: auto;
         color: rgb(89, 59, 59);
 		    font-family: 'Arvo', Georgia, Times, serif;
@@ -41,11 +39,10 @@ PAGE="""\
         width: 60%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: auto;
         margin-bottom: 10px;
         }
         .controlBox {
-        width: 60%;
+        width: 40%;
         margin: auto;
         }
         .leftBox {
@@ -59,298 +56,62 @@ PAGE="""\
         }
         .upperBox {
         width: 90%;
-        padding: none;
+        padding: 10px;
         margin: auto;
         }
         .middleBox {
         width: 90%;
-        padding: none;
+        padding: 10px;
         margin: auto;
         }
         .lowerBox {
         width: 90%;
-        padding: none;
+        padding: 10px;
         margin: auto;
         }    
         /* button design */
-        .left {
-          display: inline-block;
-          width: 5em;
-          height: 5em;
-          border: 0.5em solid #333;
-          border-radius: 50%;
-          margin-right: 1.5em;
+        .button {
           background-color: rgb(226, 177, 177);
-        }
-        .left:after {
-          content: '';
-            display: inline-block;
-          margin-top: 1.05em;
-          margin-left: 0.6em;
-          width: 1.6em;
-          height: 1.6em;
-          border-top: 0.5em solid #333;
-          border-right: 0.5em solid #333;
-          -moz-transform: rotate(-135deg);
-          -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
-        }
-        .left:active{
-        background-color: #808080;
-        box-shadow: 1px #666;
-        transform: translateY(3px);
-        }
-        .left:hover {
-        background-color: #808080;
-        border: 2px solid white;
-        color: black;
-        }
-        .top {
+          border-radius: 50px;
+          width: 70px;
+	        height: 70px;
+          font-size: 12px;
+          color: black;
+          padding: 10px 10px;
+          text-align: center;
           display: inline-block;
-          width: 5em;
-          height: 5em;
-          border: 0.5em solid #333;
-          border-radius: 50%;
-          margin-right: 0.75em;
-          background-color: rgb(226, 177, 177);
+          margin: none;
+          -webkit-transition-duration: 0.4s;
+          transition-duration: 0.1s;
+          cursor: pointer;
+          border: 2px solid black;
         }
-        .top:after {
-          content: '';
-            display: inline-block;
-          margin-top: 1.4em;
-          width: 1.6em;
-          height: 1.6em;
-          border-top: 0.5em solid #333;
-          border-right: 0.5em solid #333;
-          -moz-transform: rotate(-45deg);
-          -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+        .button:active{
+          background-color: rgb(0, 0, 0, 0.29);
         }
-        .top:active{
-        background-color: #808080;
-        box-shadow: 1px #666;
-        transform: translateY(3px);
-        }
-        .top:hover {
-        background-color: #808080;
-        border: 2px solid whitesmoke;
-        color: black;
-        }
-        .topRight {
-          display: inline-block;
-          width: 5em;
-          height: 5em;
-          border: 0.5em solid #333;
-          border-radius: 50%;
-          margin-right: 0.75em;
-          background-color: rgb(226, 177, 177);
-        }
-        .topRight:after {
-          content: '';
-            display: inline-block;
-          margin-top: 1.4em;
-          width: 1.6em;
-          height: 1.6em;
-          border-top: 0.5em solid #333;
-          border-right: 0.5em solid #333;
-          -moz-transform: rotate(-22.5deg);
-          -webkit-transform: rotate(-22.5deg);
-          transform: rotate(-22.5deg);
-        }
-        .topRight:active{
-        background-color: #808080;
-        box-shadow: 1px #666;
-        transform: translateY(3px);
-        }
-        .topRight:hover {
-        background-color: #808080;
-        border: 2px solid whitesmoke;
-        color: black;
-        }
-        .topLeft {
-          display: inline-block;
-          width: 5em;
-          height: 5em;
-          border: 0.5em solid #333;
-          border-radius: 50%;
-          margin-right: 0.75em;
-          background-color: rgb(226, 177, 177);
-        }
-        .topLeft:after {
-          content: '';
-          display: inline-block;
-          margin-top: 1em;
-          width: 1.6em;
-          height: 1.6em;
-          border-top: 0.5em solid #333;
-          border-right: 0.5em solid #333;
-          -moz-transform: rotate(-67.5deg);
-          -webkit-transform: rotate(-67.5deg);
-          transform: rotate(-67.5deg);
-          color:white;
-        }
-        .topLeft:active{
-        background-color: #808080;
-        box-shadow: 1px #666;
-        transform: translateY(3px);
-        }
-        .topLeft:hover {
-        background-color: #808080;
-        border: 2px solid white;
-        color: black;
-        }
-        .bottom {
-          display: inline-block;
-          width: 5em;
-          height: 5em;
-          border: 0.5em solid #333;
-          border-radius: 50%;
-          margin-left: 0.75em;
-          background-color: rgb(226, 177, 177);
-        }
-        .bottom:after {
-          content: '';
-            display: inline-block;
-          margin-top: 0.6em;
-          width: 1.6em;
-          height: 1.6em;
-          border-top: 0.5em solid #333;
-          border-right: 0.5em solid #333;
-          -moz-transform: rotate(135deg);
-          -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
-        }
-        .bottom:active{
-        background-color: #808080;
-        box-shadow: 1px #666;
-        transform: translateY(3px);
-        }
-        .bottom:hover {
-        background-color: #808080;
-        border: 2px solid white;
-        color: black;
-        }
-        .bottomLeft {
-          display: inline-block;
-          width: 5em;
-          height: 5em;
-          border: 0.5em solid #333;
-          border-radius: 50%;
-          margin-left: 0.75em;
-          background-color: rgb(226, 177, 177);
-        }
-        .bottomLeft:after {
-          content: '';
-          display: inline-block;
-          margin-top: 0.6em;
-          width: 1.6em;
-          height: 1.6em;
-          border-top: 0.5em solid #333;
-          border-right: 0.5em solid #333;
-          -moz-transform: rotate(157.5deg);
-          -webkit-transform: rotate(157.5deg);
-          transform: rotate(157.5deg);
-        }
-        .bottomLeft:active{
-        background-color: #808080;
-        box-shadow: 1px #666;
-        transform: translateY(3px);
-        }
-        .bottomLeft:hover {
-        background-color: #808080;
-        border: 2px solid white;
-        color: black;
-        }
-        .bottomRight {
-          display: inline-block;
-          width: 5em;
-          height: 5em;
-          border: 0.5em solid #333;
-          border-radius: 50%;
-          margin-left: 0.75em;
-          background-color: rgb(226, 177, 177);
-        }
-        .bottomRight:after {
-          content: '';
-          display: inline-block;
-          margin-top: 0.6em;
-          width: 1.6em;
-          height: 1.6em;
-          border-top: 0.5em solid #333;
-          border-right: 0.5em solid #333;
-          -moz-transform: rotate(112.5deg);
-          -webkit-transform: rotate(112.5deg);
-          transform: rotate(112,5.5deg);
-        }
-        .bottomRight:active{
-          background-color: #808080;
-          box-shadow: 1px #666;
-          transform: translateY(3px);
-        }
-        .bottomRight:hover {
-          background-color: #808080;
-          border: 2px solid white;
+        .button:hover {
+          background-color: rgb(0, 0, 0, 0.29);
+          border: 2px solid #7B9565;
           color: black;
         }
-        .right {
-          display: inline-block;
-          width: 5em;
-          height: 5em;
-          border: 0.5em solid #333;
-          border-radius: 50%;
-          margin-left: 1.5em;
-          background-color: rgb(226, 177, 177);
+        .button1 {
+          margin-right: 13px;
         }
-        .right:after {
-          content: '';
-          display: inline-block;
-          margin-top: 1.05em;
-          margin-left: -0.6em;
-          width: 1.6em;
-          height: 1.6em;
-          border-top: 0.5em solid #333;
-          border-right: 0.5em solid #333;
-          -moz-transform: rotate(45deg);
-          -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+        .button2 {
+          margin-left: 13px;
         }
-        .right:active{
-          background-color: #808080;
-          box-shadow: 1px #666;
-          transform: translateY(3px);
+        .button5 {
+          color: black;
+          border-radius: 50px;
+          width: 70px;
+          height: 70px;
         }
-        .right:hover {
-          background-color: #808080;
-          border: 2px solid white;
+        .button5:hover {
+          background-color: rgb(0, 0, 0, 0.29);
+          border: 2px solid #BB3C3C;
           color: black;
         }
-        .stop {
-          display: inline-block;
-          width: 5em;
-          height: 5em;
-          border: 0.5em solid #333;
-          border-radius: 50%;
-          margin-left: 1.5em;
-          background-color: rgb(226, 177, 177);
-        }
-        .stop:after {
-          display: inline-block;
-          margin-top: 1.05em;
-          margin-left: -0.6em;
-          width: 1.6em;
-          height: 1.6em;
-        }
-        .stop:active{
-          background-color: #808080;
-          box-shadow: 1px #666;
-          transform: translateY(3px);
-        }
-        .stop:hover {
-          background-color: #808080;
-          border: 2px solid white;
-          color: black;
-        }
-        /* expand feed button design */  
+        /* Expand feed button design */  
         .button6 {
           position:relative;
           top:50px;
@@ -364,7 +125,7 @@ PAGE="""\
           transition: 0.3s;
           border-radius: 12px;
         }
-        /*Code to enable FullScreen*/
+        /* Enable FullScreen */
         #videoStream {
           border-radius: 5px;
           cursor: pointer;
@@ -376,7 +137,7 @@ PAGE="""\
         /* The background of the fullScreen */
         .fullScreen {
           display: none;
-          position: fixed; /* Stay in place */
+          position: fixed; 
           z-index: 1; /* Sit on top */
           padding-top: 20px;
           padding-bottom: 10px;
@@ -385,14 +146,14 @@ PAGE="""\
           width: 100%;
           height: 100%;
           background-color: rgb(0,0,0);
-          background-color: rgba(0,0,0,0.9); /* Black with opacity */
+          background-color: rgba(0,0,0,0.9); 
           }
-        /* Content of the fullScreen(image) */
+        /* Content of the fullScreen */
         .fullScreen-content {
           margin: auto;
           display: block;
           width: 95%;
-          height: 95%;  /* This needs to be changed to adapt to the screen (always fill) */
+          height: 95%;  
         }
         /* Animation */
         .fullScreen-content {
@@ -460,7 +221,7 @@ PAGE="""\
           color: rgb(0, 0, 0);
         }
         /* Adapted fullScreen and buttons to smaller screens */
-        @media only screen and (max-width: 800px){
+        @media only screen and (max-width: 1040px){
         .videoFeed {
             width: 90%
           }
@@ -468,50 +229,56 @@ PAGE="""\
             width: 90%
           }
         .fullScreen-content {
+            width: 90%;
+          }
+        .button {
+          width: 80px;
+          height: 80px;
+          }      
+        }
+        @media only screen and (max-width: 700px){
+        .fullScreen-content {
             width: 100%;
           }
         .button {
-            width: 90px;
-            font-size: 12px;
-          }
-        .button5 {
-            width: 70px;
-            height: 70px;
-          }
+          width: 60px;
+          height: 60px;
+          }    
+        }
+        @media only screen and (max-width: 400px){
+        .button {
+          width: 50px;
+          height: 50px;
+          }    
         }
         </style>
         </head>
 
         <body>
         <div class="header", style="text-align:center">
-          <h1 class= "box"> Car Control</h1>
+          <h1>Car Control</h1>
         </div>
-        
         <div id="stream" class="videoFeed", style="text-align:right">
             <button id="expand" class= "button6", type="button6"><i class="fa fa-expand"></i></button>
-            <img id="normalStream" src="stream.mjpg" style="width:100%;">
+            <img id="normalStream" src="https://ak4.picdn.net/shutterstock/videos/29511124/thumb/8.jpg" style="width:100%;">
         </div>
         <div id="fullScreen" class="fullScreen" style="text-align:center">
             <span class="close">&times;</span>
-            <img class="fullScreen-content" id="fullStream" src="stream.mjpg" style="width:100%;">
+            <img class="fullScreen-content" id="fullStream" src="https://ak4.picdn.net/shutterstock/videos/29511124/thumb/8.jpg" style="width:100%;">
         </div>
-
         <div class="controlBox">
             <div class="leftBox">  
-            <div class="upperBox", style="text-align:center">
-                <button class="topLeft"style="margin:8.5px"id="topLeft"></button>
-                <button class="top"style="margin:8.5px"id="forward"></button>
-                <button class="topRight"style="margin:8.5px"id="topRight"></button>
-            <div class="middleBox", style="text-align:center">
-                <button class="left"style="margin:8.5px"id="left"></button>
-                <button class="stop"style="margin:8.5px"id="stop"> Stop</button>
-                <button class="right"style="margin:8.5px"id="right"></button>
-             </div>
-            <div class="lowerBox", style="text-align:center">
-                <button class="bottomLeft"style="margin:8.5px"id="bottomLeft"></button>
-                <button class="bottom"style="margin:8.5px"id="backward"></button>
-                <button class="bottomRight"style="margin:8.5px"id="bottomRight"></button>
-            </div>
+              <div class="upperBox", style="text-align:center">
+                <button id="forward" class="button" type="button">Go</button>
+              </div>
+              <div class="middleBox", style="text-align:center">
+                <button id="left" class="button button1" type="button1">Left</button>
+                <button id="stop" class="button button5" type="button5">Stop</button>
+                <button id="right" class="button button2" type="button2">Right</button>
+              </div>
+              <div class="lowerBox", style="text-align:center">
+                <button id="backward" class="button" type="button">Back</button>
+              </div>
             </div>
             </div>
             <div class="rightBox">  
@@ -526,15 +293,13 @@ PAGE="""\
             </div>          
         </div>    
         <script>
-            var forward = document.getElementById('forward');
-            var turnLeft = document.getElementById('left');
-            var turnRight = document.getElementById('right');
-            var stop = document.getElementById('stop');
-            var backward = document.getElementById('backward');
-            var forwardSmallTurnLeft = document.getElementById('topLeft');
-            var forwardSmallTurnRight= document.getElementById('topRight');
-            var backwardSmallTurnLeft = document.getElementById('bottomLeft');
-            var backwardSmallTurnRight = document.getElementById('bottomRight');
+          
+          // Steering functionality
+            var accelerate = document.getElementById('forward');
+			      var turnLeft = document.getElementById('left');
+			      var turnRight = document.getElementById('right');
+			      var stop = document.getElementById('stop');
+		      	var decelerate = document.getElementById('backward'); 
             var maxSpeed = document.getElementById('high');
             var medSpeed = document.getElementById('Medium');
             var lowSpeed = document.getElementById('Low');
@@ -542,60 +307,60 @@ PAGE="""\
             var lowSpeedB = document.getElementById('LowB');
             var highSpeedB = document.getElementById('MediumB');
         
-            forward.onclick = function(){
-                $.post('172.20.10.6',{
-                command: "forward"
-                });
+            accelerate.onclick = function(){
+              $.post('172.20.10.6',{
+              command: "accelerate"
+              });
             }	
-            backward.onclick = function(){
-                $.post('172.20.10.6',{
-                command: "backward"
-                });
+            decelerate.onclick = function(){
+              $.post('172.20.10.6',{
+              command: "decelerate"
+              });
             }	
             turnLeft.onclick = function(){
-                $.post('172.20.10.6',{
-                command: "turnLeft"
-                });
+              $.post('172.20.10.6',{
+              command: "turnLeft"
+              });
             }	
             turnRight.onclick = function(){
-                $.post('172.20.10.6',{
-                command: "turnRight"
-                });
+              $.post('172.20.10.6',{
+              command: "turnRight"
+              });
             }	
             stop.onclick = function(){
-                $.post('172.20.10.6',{
-                command: "stop"
-                });
-            }
+              $.post('172.20.10.6',{
+              command: "stop"
+              });
+            }	
             maxSpeed.onclick = function(){
-                $.post('172.20.10.6',{
-                command: "maxSpeed"
-                });
+              $.post('172.20.10.6',{
+              command: "maxSpeed"
+              });
             }
             medSpeed.onclick = function(){
-                $.post('172.20.10.6',{
-                command: "medSpeed"
-                });
+              $.post('172.20.10.6',{
+              command: "medSpeed"
+              });
             }
             lowSpeed.onclick = function(){
-                $.post('172.20.10.6',{
-                command: "lowSpeed"
-                });
+              $.post('172.20.10.6',{
+              command: "lowSpeed"
+              });
             }
             noSpeed.onclick = function(){
-                $.post('172.20.10.6',{
-                command: "noSpeed"
-                });
+              $.post('172.20.10.6',{
+              command: "noSpeed"
+              });
             }
             lowSpeedB.onclick = function(){
-                $.post('172.20.10.6',{
-                command: "lowSpeedB"
-                });
+              $.post('172.20.10.6',{
+              command: "lowSpeedB"
+              });
             }
             highSpeedB.onclick = function(){
-                $.post('172.20.10.6',{
-                command: "highSpeedB"
-                });
+              $.post('172.20.10.6',{
+              command: "highSpeedB"
+              });
             }
             
         // Open the fullScreen
@@ -609,8 +374,7 @@ PAGE="""\
             span.onclick = function() {
             fullScreen.style.display = "none";
             }
-            
-        // Mark the lastest pressed button  
+        // Mark the lastest pressed speedbutton  
             var header = document.getElementById("btngroup");
             var btns = header.getElementsByClassName("btngroup");
             for (var i = 0; i < btns.length; i++) {
@@ -623,6 +387,7 @@ PAGE="""\
         </script>
         </body>
 </html>
+
 """
 
 #A try except lopp for connecting to the Arduino, name of the port we're connecting to and the 
