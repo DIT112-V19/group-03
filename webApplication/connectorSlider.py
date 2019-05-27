@@ -260,11 +260,11 @@ PAGE="""\
         </div>
         <div id="stream" class="videoFeed", style="text-align:right">
             <button id="expand" class= "button6", type="button6"><i class="fa fa-expand"></i></button>
-            <img id="normalStream" src="https://ak4.picdn.net/shutterstock/videos/29511124/thumb/8.jpg" style="width:100%;">
+            <img id="normalStream" src="stream.mjpg" style="width:100%;">
         </div>
         <div id="fullScreen" class="fullScreen" style="text-align:center">
             <span class="close">&times;</span>
-            <img class="fullScreen-content" id="fullStream" src="https://ak4.picdn.net/shutterstock/videos/29511124/thumb/8.jpg" style="width:100%;">
+            <img class="fullScreen-content" id="stream.mjpg" style="width:100%;">
         </div>
         <div class="controlBox">
             <div class="leftBox">  
